@@ -56,6 +56,15 @@ cd ~/src/personal-visual-explainers
 # creating-visual-explainers スキルを使って図解を生成
 ```
 
+## 参照ドキュメント（作業開始前に読む）
+
+| ファイル | 役割 |
+|---------|------|
+| [docs/assignment.md](docs/assignment.md) | 今月の課題の正本。ポータルのスクリーンショットを書き起こしたもの |
+| [docs/references/ads-lectures.md](docs/references/ads-lectures.md) | 第9回講義など、関連する講義文字起こしへの索引 |
+
+矛盾したら **docs/assignment.md がこのリポジトリ内では正**。講義は考え方の参照用。
+
 ## 講義参照
 
 - 第9回講義文字起こし: `~/src/講義/第9回講義_文字起こし.md`（追加予定）
