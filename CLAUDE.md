@@ -49,12 +49,11 @@ AI Driven School 第5ヶ月目の月次課題。配布された `writing-proposa
 
 ## ステップ⑥の図解作成について
 
-図解は **このリポジトリではなく** `personal-visual-explainers` で作成する。
+図解は **このリポジトリの `output/` に** 作成する。`creating-visual-explainers` スキルはユーザーレベル（`~/.claude/skills/creating-visual-explainers/`）にあり、どのプロジェクトからでも同じスキル・テンプレート・公開スクリプトを使えるため、別リポジトリに移動する必要はない。
 
-```bash
-cd ~/src/personal-visual-explainers
-# creating-visual-explainers スキルを使って図解を生成
-```
+チャット欄で「チューニング前後の提案文を図解して」のように依頼する。
+
+> **補足（2026-07-05訂正）**：以前は `personal-visual-explainers` で作る方針にしていたが、実際にはそのリポジトリは**別の月次課題（自分専用の図解スキルを作る課題）専用のワークスペース**であり、まだパーソナル版のスキルも作られていなかった（配布ままの汎用スキルしかない状態）。図解スキル自体がプロジェクトを問わず動く設計なので、今月の提出物一式（提案文・スキル・図解）はこのリポジトリにまとめる方針に変更した。
 
 ## 参照ドキュメント（作業開始前に読む）
 
@@ -75,4 +74,3 @@ cd ~/src/personal-visual-explainers
 
 - 出力した提案文をタイピング・音声で手直しする
 - `output/before-tuning.md` を削除・上書きする（チューニング前後の比較が提出物に必要）
-- 図解HTMLをこのリポジトリで作成する（`personal-visual-explainers` が担当）
