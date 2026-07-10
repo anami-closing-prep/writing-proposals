@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta property="og:title" content="提案スキルを自分専用にチューニングする">
+  <meta property="og:description" content="配布された提案文書作成スキルを、自分の現場（グループLINEでの進捗確認）に合わせてチューニングした過程をBefore/Afterで図解します。">
+  <meta property="og:type" content="article">
+  <title>提案スキルを自分専用にチューニングする</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23FFFFFF'/><rect x='8' y='8' width='84' height='84' rx='14' fill='none' stroke='%233B82F6' stroke-width='4'/><circle cx='32' cy='40' r='10' fill='%233B82F6' opacity='0.8'/><circle cx='68' cy='40' r='10' fill='%2360A5FA' opacity='0.8'/><rect x='25' y='62' width='50' height='6' rx='3' fill='%2394A3B8' opacity='0.6'/><rect x='30' y='74' width='40' height='6' rx='3' fill='%2394A3B8' opacity='0.3'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ads: {
+              bg: '#FFFFFF',
+              surface: '#F8FAFC',
+              hover: '#F1F5F9',
+              border: '#E2E8F0',
+              accent: '#3B82F6',
+              'accent-light': '#2563EB',
+              text: '#1E293B',
+              muted: '#64748B',
+              dim: '#94A3B8',
+              positive: '#10B981',
+              negative: '#EF4444',
+              warning: '#F59E0B',
+            }
+          },
+          fontFamily: {
+            sans: ['"Noto Sans JP"', '"Hiragino Sans"', '"Hiragino Kaku Gothic ProN"', '"Yu Gothic UI"', '"Meiryo"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @media print {
+      .no-print { display: none !important; }
+      body { border-top: none !important; }
+      .rounded-xl { break-inside: avoid; }
+      .md\:flex-row { flex-direction: row !important; }
+      .md\:hidden { display: none !important; }
+      .hidden.md\:block { display: block !important; }
+      .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+      .sm\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+      .md\:mb-20 { margin-bottom: 5rem !important; }
+      .md\:py-16 { padding-top: 4rem !important; padding-bottom: 4rem !important; }
+      .bg-clip-text.text-transparent {
+        -webkit-background-clip: initial !important;
+        background-clip: initial !important;
+        color: #2563EB !important;
+        -webkit-text-fill-color: #2563EB !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-ads-bg text-slate-600 antialiased leading-relaxed border-t-4 border-ads-accent">
+  <div class="no-print max-w-3xl mx-auto px-5 pt-2 flex justify-end">
+    <button onclick="window.print()" class="flex items-center gap-1.5 text-xs text-ads-dim hover:text-ads-accent transition-colors cursor-pointer">
+      <i data-lucide="download" class="w-3.5 h-3.5"></i>
+      PDF
+    </button>
+  </div>
+  <main class="max-w-3xl mx-auto px-5 py-10 md:py-16">
+<!-- CONTENT_START -->
+
+<!-- ============================================================ -->
+<!--  HERO                                                        -->
+<!-- ============================================================ -->
+<div class="text-center mb-8 md:mb-10">
+  <div class="inline-flex items-center gap-2 bg-ads-accent/10 text-ads-accent-light px-4 py-1.5 rounded-full text-sm font-medium mb-6">
+    <i data-lucide="wand-2" class="w-4 h-4"></i>
+    ビジネス／AI活用
+  </div>
+  <h1 class="text-3xl md:text-5xl font-black text-slate-900 tracking-tight mb-6">
+    <span class="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">提案スキル</span>を自分専用にチューニングする
+  </h1>
+  <p class="text-lg text-ads-muted max-w-xl mx-auto leading-relaxed">
+    配布されたままのAIスキルに提案文を作らせたら、LINEで送るには強すぎる・冷たすぎる文章が出てきた。<br>
+    そこから自分の現場に合わせて磨き直した話です ──
+  </p>
+</div>
+
+
+<!-- ============================================================ -->
+<!--  ONE-PAGE SUMMARY: 3層構造                                    -->
+<!-- ============================================================ -->
+<div class="bg-ads-surface border border-ads-border rounded-2xl p-6 md:p-10 mb-6">
+  <div class="text-center mb-8 md:mb-10">
+    <p class="text-xl md:text-2xl font-black text-slate-900 mb-2">
+      チューニングの型 = <span class="text-ads-accent-light">「型」は共通、差し替えるのは「実例」と「事実」だけ</span>
+    </p>
+    <p class="text-sm text-ads-muted">
+      現場が変わっても、書き方のルールそのものは書き直さない
+    </p>
+  </div>
+
+  <!-- 3層入れ子ブロック -->
+  <div class="bg-white border-2 border-ads-accent/20 rounded-2xl p-5 md:p-8 mb-6">
+    <div class="flex items-center justify-between mb-4">
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center">
+          <i data-lucide="box" class="w-4 h-4 text-blue-600"></i>
+        </div>
+        <span class="font-bold text-slate-900 text-sm">① 型（SKILL.md本体）</span>
+      </div>
+      <span class="text-[11px] text-ads-dim bg-slate-100 rounded-full px-3 py-1">クライアントが変わっても書き直さない</span>
+    </div>
+    <p class="text-xs text-ads-muted mb-4 pl-1">メンツを守る言い換え／先延ばしにされない締め方／媒体ごとの出力フォーマット、など</p>
+
+    <div class="flex justify-center mb-4">
+      <i data-lucide="arrow-down" class="w-5 h-5 text-ads-accent"></i>
+    </div>
+
+    <div class="bg-ads-accent/5 border-2 border-ads-accent/25 rounded-xl p-5 mb-4">
+      <div class="flex items-center justify-between mb-3">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-ads-accent/15 flex items-center justify-center">
+            <i data-lucide="file-text" class="w-4 h-4 text-ads-accent-light"></i>
+          </div>
+          <span class="font-bold text-ads-accent-light text-sm">② 実例（examples.md）</span>
+        </div>
+        <span class="text-[11px] text-ads-dim bg-white rounded-full px-3 py-1 border border-ads-border/50">差し替え可能</span>
+      </div>
+      <p class="text-xs text-ads-muted mb-4 pl-1">今回の実例：先延ばしにされがちな相手に、日時を決めさせるLINE提案文の模範回答</p>
+
+      <div class="flex justify-center mb-4">
+        <i data-lucide="arrow-down" class="w-5 h-5 text-ads-accent-light"></i>
+      </div>
+
+      <div class="bg-white border border-emerald-500/30 rounded-lg p-4">
+        <div class="flex items-center justify-between mb-2">
+          <div class="flex items-center gap-2">
+            <div class="w-7 h-7 rounded-lg bg-emerald-500/10 flex items-center justify-center">
+              <i data-lucide="building-2" class="w-3.5 h-3.5 text-emerald-600"></i>
+            </div>
+            <span class="font-bold text-emerald-700 text-sm">③ 事実（クライアントごとのファイル）</span>
+          </div>
+          <span class="text-[11px] text-ads-dim bg-slate-100 rounded-full px-3 py-1">クライアントが変わったら差し替える</span>
+        </div>
+        <p class="text-xs text-ads-muted pl-1">今回の事実：いびき治療クリニックの決裁構造・コミュニケーション手段・先延ばし傾向</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Divider with label -->
+  <div class="flex items-center gap-4 mb-6">
+    <div class="flex-1 border-t border-ads-border/50"></div>
+    <div class="text-[11px] text-ads-dim font-medium">この設計だから、③だけ差し替えれば他のクライアントにも使える</div>
+    <div class="flex-1 border-t border-ads-border/50"></div>
+  </div>
+
+  <div class="flex flex-wrap justify-center gap-2">
+    <div class="flex items-center gap-1.5 bg-white border border-ads-border rounded-full px-3.5 py-1.5 text-xs text-slate-700">
+      <i data-lucide="users" class="w-3.5 h-3.5 text-blue-500"></i>
+      決裁構造
+    </div>
+    <div class="flex items-center gap-1.5 bg-white border border-ads-border rounded-full px-3.5 py-1.5 text-xs text-slate-700">
+      <i data-lucide="message-circle" class="w-3.5 h-3.5 text-emerald-500"></i>
+      コミュニケーション手段
+    </div>
+    <div class="flex items-center gap-1.5 bg-white border border-ads-border rounded-full px-3.5 py-1.5 text-xs text-slate-700">
+      <i data-lucide="clock" class="w-3.5 h-3.5 text-amber-500"></i>
+      先延ばしの傾向
+    </div>
+  </div>
+</div>
+
+<p class="text-center text-ads-muted mb-16 md:mb-20">
+  ここから、実際にどんな相手に・どんな提案文を作ったかを見ていきます。
+</p>
+
+
+<!-- ============================================================ -->
+<!--  SECTION 1: 想定した相手・変えたいこと                          -->
+<!-- ============================================================ -->
+<section class="mb-16 md:mb-20">
+  <div class="flex items-center gap-3 mb-8">
+    <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-blue-500/10 flex-shrink-0">
+      <i data-lucide="target" class="w-5 h-5 text-blue-600"></i>
+    </div>
+    <h2 class="text-xl md:text-2xl font-bold text-slate-900">想定した相手・変えたいこと</h2>
+  </div>
+
+  <p class="mb-8 leading-relaxed">
+    支援先は<strong class="text-slate-900">いびき治療クリニック</strong>。経営コンサルティングの一環で、グループLINE上での進捗確認・承認依頼の文章を扱っています。
+  </p>
+
+  <!-- 決裁構造フロー図 -->
+  <div class="bg-ads-surface border border-ads-border rounded-xl p-6 md:p-8 mb-8">
+    <h3 class="text-lg font-bold text-slate-900 text-center mb-8">決裁構造 ── 誰に送ると、誰が決めるのか</h3>
+
+    <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-0">
+      <div class="w-48 bg-blue-500/10 border border-blue-500/20 rounded-xl p-5 text-center">
+        <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center mx-auto mb-3">
+          <i data-lucide="user" class="w-6 h-6 text-blue-600"></i>
+        </div>
+        <div class="font-bold text-blue-700 mb-1">自分</div>
+        <div class="text-xs text-blue-600/70">提案文を送る側</div>
+      </div>
+
+      <div class="flex items-center justify-center md:w-16 py-2 md:py-0">
+        <div class="flex flex-col items-center gap-1">
+          <span class="text-[10px] text-ads-muted">グループLINEで送る</span>
+          <i data-lucide="arrow-right" class="w-5 h-5 text-ads-accent hidden md:block"></i>
+          <i data-lucide="arrow-down" class="w-5 h-5 text-ads-accent md:hidden"></i>
+        </div>
+      </div>
+
+      <div class="w-48 bg-ads-accent/10 border-2 border-ads-accent/30 rounded-xl p-5 text-center">
+        <div class="w-12 h-12 rounded-full bg-ads-accent/20 flex items-center justify-center mx-auto mb-3">
+          <i data-lucide="users" class="w-6 h-6 text-ads-accent-light"></i>
+        </div>
+        <div class="font-bold text-ads-accent-light mb-1">実務窓口 2名</div>
+        <div class="text-xs text-ads-accent/70">現場のカウンセラー</div>
+        <div class="text-[11px] text-ads-muted mt-2 bg-white rounded-lg px-2.5 py-1 border border-ads-border/50">決裁権はないが、相談を上に回す</div>
+      </div>
+
+      <div class="flex items-center justify-center md:w-16 py-2 md:py-0">
+        <div class="flex flex-col items-center gap-1">
+          <span class="text-[10px] text-ads-muted">相談を回す</span>
+          <i data-lucide="arrow-right" class="w-5 h-5 text-ads-accent hidden md:block"></i>
+          <i data-lucide="arrow-down" class="w-5 h-5 text-ads-accent md:hidden"></i>
+        </div>
+      </div>
+
+      <div class="w-48 bg-emerald-500/10 border border-emerald-500/20 rounded-xl p-5 text-center">
+        <div class="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center mx-auto mb-3">
+          <i data-lucide="crown" class="w-6 h-6 text-emerald-600"></i>
+        </div>
+        <div class="font-bold text-emerald-700 mb-1">経営層</div>
+        <div class="text-xs text-emerald-600/70">決裁権の9割</div>
+        <div class="text-[11px] text-ads-muted mt-2 bg-white rounded-lg px-2.5 py-1 border border-ads-border/50">同じLINEを見ているが発言しない</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-ads-accent/5 border border-ads-accent/20 rounded-xl p-5">
+    <div class="flex items-start gap-3">
+      <div class="flex items-center justify-center w-8 h-8 rounded-lg bg-ads-accent/10 flex-shrink-0 mt-0.5">
+        <i data-lucide="lightbulb" class="w-4 h-4 text-ads-accent-light"></i>
+      </div>
+      <div>
+        <p class="font-bold text-ads-accent-light mb-1">変えたいこと</p>
+        <p class="text-ads-muted leading-relaxed">
+          会議で決めた「次の一手」について、会議後にグループLINEで送る進捗確認・承認依頼の文章を、<strong class="text-slate-800">「それでいきましょう」「いつまでにやります」という即答・期日コミットを引き出せる文章</strong>に変える。過去の傾向として、「確認します」「検討します」で止まり、期日が出ないまま先延ばしになりやすい相手。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================ -->
+<!--  SECTION 2: Before → 気になった点                             -->
+<!-- ============================================================ -->
+<section class="mb-16 md:mb-20">
+  <div class="flex items-center gap-3 mb-8">
+    <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-red-500/10 flex-shrink-0">
+      <i data-lucide="search" class="w-5 h-5 text-red-600"></i>
+    </div>
+    <h2 class="text-xl md:text-2xl font-bold text-slate-900">Before：配布ままのスキルで作ってみたら</h2>
+  </div>
+
+  <p class="mb-8 leading-relaxed">
+    配布されたままのスキルに、同じ状況（録音分析フィードバック運用が止まっている件を動かしたい）を伝えて出力させたところ、テンプレートの型（現状の課題→理由→お願い→リスク）は丁寧に埋まっていました。しかし読み返すと、次の5つが気になりました。
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div class="bg-red-500/5 border border-red-500/20 rounded-xl p-5">
+      <div class="flex items-start gap-2.5 mb-2">
+        <i data-lucide="x-circle" class="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0"></i>
+        <span class="font-bold text-red-700 text-sm">トーンが冷たい・直接的すぎる</span>
+      </div>
+      <p class="text-xs text-ads-muted leading-relaxed pl-6">引用：「確認したところ、この調整自体が不要だと分かりました」「まだ着手できていない」── 相手を責めているように聞こえる</p>
+    </div>
+    <div class="bg-red-500/5 border border-red-500/20 rounded-xl p-5">
+      <div class="flex items-start gap-2.5 mb-2">
+        <i data-lucide="x-circle" class="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0"></i>
+        <span class="font-bold text-red-700 text-sm">お願いの仕方が強制的すぎる</span>
+      </div>
+      <p class="text-xs text-ads-muted leading-relaxed pl-6">引用：「今週中に開始してください」「◯月◯日17:00までに」── 日時をこちらから一方的に指定し、決定権を奪っている</p>
+    </div>
+    <div class="bg-red-500/5 border border-red-500/20 rounded-xl p-5">
+      <div class="flex items-start gap-2.5 mb-2">
+        <i data-lucide="x-circle" class="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0"></i>
+        <span class="font-bold text-red-700 text-sm">LINEというチャネルへの配慮がない</span>
+      </div>
+      <p class="text-xs text-ads-muted leading-relaxed pl-6">◎現状の課題／◎理由／◎お願い／◎リスク、と見出しが並ぶ長い文章。忙しい経営層はスマホで読まない</p>
+    </div>
+    <div class="bg-red-500/5 border border-red-500/20 rounded-xl p-5">
+      <div class="flex items-start gap-2.5 mb-2">
+        <i data-lucide="x-circle" class="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0"></i>
+        <span class="font-bold text-red-700 text-sm">リスクと対策が的外れ</span>
+      </div>
+      <p class="text-xs text-ads-muted leading-relaxed pl-6">「情報管理を慎重に進めるため」と想定したが、実際は知識不足か後回しなだけ。本質は「先延ばしパターン」への対策だった</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================ -->
+<!--  SECTION 3: Before / After 比較（LINEチャットUI再現）           -->
+<!-- ============================================================ -->
+<section class="mb-16 md:mb-20">
+  <div class="flex items-center gap-3 mb-8">
+    <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-purple-500/10 flex-shrink-0">
+      <i data-lucide="git-compare" class="w-5 h-5 text-purple-600"></i>
+    </div>
+    <h2 class="text-xl md:text-2xl font-bold text-slate-900">Before / After ── 同じ状況で出した提案文の全文</h2>
+  </div>
+
+  <p class="mb-8 leading-relaxed">
+    同じ題材・同じ相手で、配布ままのスキルとチューニング後のスキルに、それぞれ一発で出力させた結果です。
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+    <!-- Before: ドキュメント風カード -->
+    <div>
+      <div class="inline-flex items-center gap-1.5 bg-red-500/10 text-red-600 px-3 py-1 rounded-full text-xs font-bold tracking-wide mb-3">
+        <i data-lucide="x-circle" class="w-3.5 h-3.5"></i>
+        BEFORE — 配布ままのスキル
+      </div>
+      <div class="bg-white border border-red-500/20 rounded-xl p-5 text-xs leading-relaxed text-slate-700 space-y-3">
+        <p class="font-bold text-slate-900">【提案】録音分析フィードバックの運用を、本部からのアカウントログインなしで今週中に開始してください</p>
+        <p>先週開始予定でしたが、本部から各院のクラウドアカウントへログインするための調整を理由に、まだ止まっています。確認したところ、この調整自体が不要だと分かりましたので、そのまま今週中に始められます。</p>
+        <p><span class="font-bold">◎ 現状の課題</span><br>録音分析フィードバックは先週開始予定だったが、まだ着手できていない。</p>
+        <p><span class="font-bold">◎ わかったこと</span><br>本部側の作業は、社内共有フォルダから録音を取得しAIに渡すだけで完了する。クラウドアカウントへのログインは不要である。</p>
+        <p><span class="font-bold">◎ お願いしたいこと</span><br>拠点1・拠点2の対象カウンセラー1名分の直近の商談録音を使って、今週金曜17:00までに分析とフィードバックを試験実施してください。</p>
+        <p><span class="font-bold">◎ リスクと対策</span><br>アカウントログインでの調整は、情報管理を慎重に進めるためだったと思います。社内共有フォルダ経由であれば新たなアカウント権限を増やさずに済みます。</p>
+      </div>
+    </div>
+
+    <!-- After: LINEチャットUI（最小限の再現） -->
+    <div>
+      <div class="inline-flex items-center gap-1.5 bg-emerald-500/10 text-emerald-600 px-3 py-1 rounded-full text-xs font-bold tracking-wide mb-3">
+        <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+        AFTER — チューニング後の一発出し
+      </div>
+      <div class="rounded-xl overflow-hidden border border-ads-border">
+        <div class="flex items-center gap-2 bg-emerald-50 border-b border-ads-border px-4 py-2.5">
+          <i data-lucide="users" class="w-3.5 h-3.5 text-emerald-600"></i>
+          <span class="text-[11px] text-emerald-700 font-medium">グループLINE（経営層は見ているが発言しない）</span>
+        </div>
+        <div class="bg-slate-50 p-5">
+          <div class="bg-white rounded-2xl rounded-tl-sm border border-ads-border px-4 py-3 text-sm text-slate-700 leading-relaxed max-w-[95%]">
+            <p>お疲れ様です。</p>
+            <p class="mt-2">録音分析フィードバックの件、進めていただきありがとうございます。</p>
+            <p class="mt-2">
+              ・録音はカウンセラーが社内共有フォルダに上げてくれているので<br>
+              　そこから取ってAIに読ませれば分析できそうです<br>
+              ・なのでアカウントへのログインは、たぶんなくても大丈夫そうです<br>
+              ・まずは拠点1と拠点2で、<br>
+              　試しに動かしてみていただけると嬉しいです！
+            </p>
+            <p class="mt-2">
+              いつ頃なら試せそうでしょうか？<br>
+              難しそうであれば、いつまでに動けそうか教えていただきたいです😊
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================ -->
+<!--  SECTION 4: 効いた工夫・苦戦したポイント                        -->
+<!-- ============================================================ -->
+<section class="mb-16 md:mb-20">
+  <div class="flex items-center gap-3 mb-8">
+    <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-emerald-500/10 flex-shrink-0">
+      <i data-lucide="sparkles" class="w-5 h-5 text-emerald-600"></i>
+    </div>
+    <h2 class="text-xl md:text-2xl font-bold text-slate-900">実際に効いた工夫・苦戦したポイント</h2>
+  </div>
+
+  <p class="mb-8 leading-relaxed">
+    「気になった点」を直すために、SKILL.md本体に「メンツを守る言い換え」「先延ばしにされない締め方」「チャットメッセージ型の出力フォーマット」というルールを追加しました。その結果、実際の文章では次の3つが特に効きました。
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+    <div class="bg-ads-surface border border-ads-border rounded-xl p-5">
+      <div class="w-9 h-9 rounded-lg bg-blue-500/10 flex items-center justify-center mb-3">
+        <i data-lucide="user-x" class="w-4.5 h-4.5 text-blue-600"></i>
+      </div>
+      <h3 class="font-bold text-slate-900 text-sm mb-2">宛名を入れない</h3>
+      <p class="text-xs text-ads-muted leading-relaxed">個人名で呼びかけず、グループ全員への話として自然に読める形にした。発言しない決裁者が見ていても違和感がない</p>
+    </div>
+    <div class="bg-ads-surface border border-ads-border rounded-xl p-5">
+      <div class="w-9 h-9 rounded-lg bg-purple-500/10 flex items-center justify-center mb-3">
+        <i data-lucide="heart" class="w-4.5 h-4.5 text-purple-600"></i>
+      </div>
+      <h3 class="font-bold text-slate-900 text-sm mb-2">否定的な言葉を避ける</h3>
+      <p class="text-xs text-ads-muted leading-relaxed">「まだできていません」でなく「進めていただきありがとうございます」から入り、柔らかく言い切る</p>
+    </div>
+    <div class="bg-ads-surface border border-ads-border rounded-xl p-5">
+      <div class="w-9 h-9 rounded-lg bg-amber-500/10 flex items-center justify-center mb-3">
+        <i data-lucide="calendar-clock" class="w-4.5 h-4.5 text-amber-600"></i>
+      </div>
+      <h3 class="font-bold text-slate-900 text-sm mb-2">日時は相手に決めさせる</h3>
+      <p class="text-xs text-ads-muted leading-relaxed">「いつ頃なら動けますか？」で締め、「難しければいつまでに動けそうか」を必ず添えて期日の言葉を引き出す</p>
+    </div>
+  </div>
+
+  <div class="bg-amber-500/5 border border-amber-500/20 rounded-xl p-5">
+    <div class="flex items-start gap-3">
+      <div class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500/10 flex-shrink-0 mt-0.5">
+        <i data-lucide="alert-circle" class="w-4 h-4 text-amber-600"></i>
+      </div>
+      <div>
+        <p class="font-bold text-amber-700 mb-1">苦戦したポイント</p>
+        <p class="text-ads-muted leading-relaxed text-sm">
+          模範回答（examples.mdの型）は、AIのたたき台をそのまま使わず、自分で手作業で磨いた。「どこまでが手直しで、どこからがAIに教え込むべき型か」の線引きに一番時間がかかった。また、この型が今のクライアント以外でも通用するかは、まだ検証していない。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================ -->
+<!--  SECTION 5: まとめ                                            -->
+<!-- ============================================================ -->
+<section>
+  <div class="flex items-center gap-3 mb-8">
+    <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-ads-accent/10 flex-shrink-0">
+      <i data-lucide="check-circle" class="w-5 h-5 text-ads-accent-light"></i>
+    </div>
+    <h2 class="text-xl md:text-2xl font-bold text-slate-900">まとめ — 覚えておきたい3つのこと</h2>
+  </div>
+
+  <div class="space-y-4 mb-10">
+    <div class="bg-ads-surface border border-ads-border rounded-xl p-6 border-l-4 border-l-blue-500">
+      <div class="flex items-start gap-4">
+        <div class="text-2xl font-black text-blue-500 leading-none flex-shrink-0 mt-1">01</div>
+        <div>
+          <h3 class="font-bold text-slate-900 mb-2">型は共通、差し替えるのは事実だけ</h3>
+          <p class="text-sm text-ads-muted leading-relaxed">
+            メンツ配慮・締め方・出力フォーマットの型はSKILL.md本体に置き、クライアントごとの決裁構造や傾向だけを別ファイルに分けた。クライアントが変わっても型は書き直さない設計にした。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-ads-surface border border-ads-border rounded-xl p-6 border-l-4 border-l-emerald-500">
+      <div class="flex items-start gap-4">
+        <div class="text-2xl font-black text-emerald-500 leading-none flex-shrink-0 mt-1">02</div>
+        <div>
+          <h3 class="font-bold text-slate-900 mb-2">配慮ルールは、言葉で注文するより模範回答で学習させる方が効く</h3>
+          <p class="text-sm text-ads-muted leading-relaxed">
+            配布ままのスキルにも「メンツを守る」という原則自体は書かれていたが、実際の出力には反映されていなかった。ルールの文章を増やすより、磨き上げた模範回答を1本渡す方が、実際の文章の質に効いた。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-ads-surface border border-ads-border rounded-xl p-6 border-l-4 border-l-amber-500">
+      <div class="flex items-start gap-4">
+        <div class="text-2xl font-black text-amber-500 leading-none flex-shrink-0 mt-1">03</div>
+        <div>
+          <h3 class="font-bold text-slate-900 mb-2">次にやりたいこと：他クライアントでの検証</h3>
+          <p class="text-sm text-ads-muted leading-relaxed">
+            今回の型は、いびき治療クリニック1社分の事実で磨いたもの。他のクライアントや別の場面でも同じ型が通用するか、まだ試していない。通用しなければ、模範回答を作り直すところから改めて磨き直す。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT_END -->
+  </main>
+  <footer class="max-w-3xl mx-auto px-5 pb-10 pt-6 border-t border-ads-border/30">
+    <p class="text-xs text-ads-dim text-center">AI-Driven School の図解ツールで作成</p>
+  </footer>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
