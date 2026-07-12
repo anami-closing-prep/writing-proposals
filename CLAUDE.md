@@ -19,6 +19,14 @@ AI Driven School 第5ヶ月目の月次課題。配布された `writing-proposa
 | `output/before-tuning.md` | ステップ②: 配布スキルそのままで出した提案文（絶対に消さない） |
 | `output/after-tuning.md` | ステップ⑤: チューニング後スキルで一発出しした提案文 |
 
+## スキルの正本について（2026-07-12 明文化）
+
+`writing-proposals` スキルの**実体は本リポジトリの `.claude/skills/writing-proposals/` の1つだけ**。`~/.claude/skills/writing-proposals` はここへの**シンボリックリンク**（2026-07-04 作成）であり、どちらのパスから見ても常に同一内容になる。
+
+- チューニング期間中（課題提出まで）はこの構成のまま、本リポジトリ側で編集・コミットする
+- **課題提出後の昇格手順**: `~/.claude/skills/writing-proposals` のシンボリックリンクを実体コピーに置き換えて `~/.claude` の Git 管理下に入れ、以後は `~/.claude` 側が正本。本リポジトリ側は提出物スナップショットとして凍結する（編集しない）
+- **クライアント事実（`references/clients/`）の追記・更新は、昇格後は必ず `~/.claude` 側だけに行う**。事実が2箇所で食い違うと、古い決裁構造を前提にした提案文が生成される
+
 ## 課題の2つのルール（必ず守る）
 
 **ルール①: AIによる一発出し**
@@ -66,7 +74,7 @@ AI Driven School 第5ヶ月目の月次課題。配布された `writing-proposa
 
 ## 講義参照
 
-- 第9回講義文字起こし: `~/src/講義/第9回講義_文字起こし.md`（追加予定）
+- 第9回講義文字起こし: `~/src/講義/第9回講義_文字起こし.md`
 - ADS講義索引: `~/.claude/skills/ai-driven-school-lectures/references/index.md`
 - 課題の詳細: ADS ポータルの「第5ヶ月目 自分専用の提案スキルを作る」
 
