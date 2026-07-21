@@ -19,6 +19,22 @@ AI Driven School 第5ヶ月目の月次課題。配布された `writing-proposa
 | `output/before-tuning.md` | ステップ②: 配布スキルそのままで出した提案文（絶対に消さない） |
 | `output/after-tuning.md` | ステップ⑤: チューニング後スキルで一発出しした提案文 |
 
+## Cursor / Claude Code の情報共有アーキテクチャ（2026-07-21 明文化）
+
+このリポジトリは Cursor と Claude Code の両方から同時に開発する前提で構成している。情報の置き場所は3層に分かれており、**Layer A の正本を増やさないこと**が全体の一貫性を保つ唯一の条件。
+
+| Layer | 内容 | 正本 | 両ツールでの扱い |
+|-------|------|------|------------------|
+| A: プロジェクト共有知識 | 作業ルール・スキル | この `CLAUDE.md`（root）と `.claude/skills/` | Cursorは `CLAUDE.md` を `AGENTS.md` と同等に、`alwaysApply` 設定に関わらず全会話に適用する（[Cursor Docs: Rules](https://cursor.com/help/customization/rules)）。`.claude/skills/` もCursor/Claude Code双方が互換読み込みする（[Cursor Docs: Agent Skills](https://cursor.com/docs/skills)）。**つまりこの2つは既に単一の正本で完全に同一内容**。 |
+| B: ツール運用設定 | `.claude/settings.local.json`（個人の許可設定） | Claude Code側のみ | 情報ではなく個人のツール設定なので非対称でよい。Gitでは常に除外する |
+| C: 個人のUser Rules | Cursor Settings > Rules のグローバル項目 | （このリポジトリの範囲外） | 現状Claude Codeからは見えない。対応する場合は `~/.cursor/rules/` と `~/.claude/CLAUDE.md` 側で扱う、別タスク |
+
+**やらないこと**: Layer A に `AGENTS.md` を新設しない。Cursorは既に `CLAUDE.md` を `AGENTS.md` と同格で読むため、追加すると「2ファイルの同期」という新たな非対称の火種を生むだけ（Claude Codeは `AGENTS.md` をnativeに読まない。[Claude Code Docs: Memory](https://code.claude.com/docs/en/memory) のAGENTS.md節を参照）。新しいプロジェクト知識を追記する場所に迷ったら、必ずこの `CLAUDE.md` か `.claude/skills/writing-proposals/references/` に置く。
+
+**読み込みの確認方法**:
+- Cursor: このリポジトリで新規チャットを開き、`writing-proposals` スキルと本ファイルの内容がルールとして認識されているか確認する
+- Claude Code: このリポジトリで `claude` を起動し、`/context` コマンドで Memory files 一覧に `CLAUDE.md` と `.claude/skills/writing-proposals` が含まれているか確認する
+
 ## スキルの正本について（2026-07-12 明文化）
 
 `writing-proposals` スキルの**実体は本リポジトリの `.claude/skills/writing-proposals/` の1つだけ**。`~/.claude/skills/writing-proposals` はここへの**シンボリックリンク**（2026-07-04 作成）であり、どちらのパスから見ても常に同一内容になる。

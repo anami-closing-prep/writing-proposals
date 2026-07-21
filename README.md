@@ -19,18 +19,27 @@ AIによる「一発出し」で提案文を作成する。
 ```
 writing-proposals/
 ├── .claude/
+│   ├── settings.local.json          ← Claude Codeの個人許可設定（Git管理外）
 │   └── skills/
 │       └── writing-proposals/       ← 提案スキル本体（配布ファイルを配置する）
 │           ├── SKILL.md             ← AIへの指示書。ここをチューニングする
 │           └── references/
+│               ├── clients/         ← クライアント別の事実
 │               ├── examples.md      ← 自分が作った模範回答（ステップ③で作成）
 │               └── output-quality.md ← 出力品質チェックリスト（配布ファイル）
+├── docs/
+│   ├── assignment.md                ← 今月の課題の正本
+│   ├── handoff/                     ← チャット引き継ぎメモ
+│   └── references/                  ← 講義など参照ドキュメントの索引
 ├── output/
 │   ├── before-tuning.md             ← チューニング前の提案文（消さない）
-│   └── after-tuning.md              ← チューニング後の提案文（提出用）
-├── CLAUDE.md                        ← Cursor向けの作業ガイド
+│   ├── after-tuning.md              ← チューニング後の提案文（提出用）
+│   └── proposal-tuning-anami.html   ← ステップ⑥の図解（Surgeへ公開）
+├── CLAUDE.md                        ← Cursor / Claude Code 共通の作業ガイド（両ツールが同一内容を読む）
 └── README.md                        ← この説明書
 ```
+
+`CLAUDE.md` は Cursor 専用ファイルではない。Cursorは `CLAUDE.md` を `AGENTS.md` と同格で全会話に自動適用し、Claude Codeはこれ自身の正本ファイルとして読む。両ツールが常に同一内容を参照する仕組みの詳細は [CLAUDE.md の「Cursor / Claude Code の情報共有アーキテクチャ」節](CLAUDE.md#cursor--claude-code-の情報共有アーキテクチャ2026-07-21-明文化) を参照。
 
 ## 始め方
 

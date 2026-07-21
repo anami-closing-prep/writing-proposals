@@ -2,3 +2,7 @@
 **/.DS_Store
 .env
 .env.local
+
+# Claude Code の個人ローカル設定（マシン固有の許可設定。ユーザーのグローバル
+# gitignore に依存せず、このリポジトリ自身で除外を保証する）
+.claude/settings.local.json
