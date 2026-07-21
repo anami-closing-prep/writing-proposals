@@ -39,6 +39,8 @@ AI Driven School 第5ヶ月目の月次課題。配布された `writing-proposa
 
 `writing-proposals` スキルの**実体は本リポジトリの `.claude/skills/writing-proposals/` の1つだけ**。`~/.claude/skills/writing-proposals` はここへの**シンボリックリンク**（2026-07-04 作成）であり、どちらのパスから見ても常に同一内容になる。
 
+`writing-presentations` スキルも同じ構成（2026-07-22 取り込み）。実体は `.claude/skills/writing-presentations/`、`~/.claude/skills/writing-presentations` はシンボリックリンク。取り込み時点のコミットが「チューニング前の原本」（発展課題の図解ビフォー素材）。
+
 - チューニング期間中（課題提出まで）はこの構成のまま、本リポジトリ側で編集・コミットする
 - **課題提出後の昇格手順**: `~/.claude/skills/writing-proposals` のシンボリックリンクを実体コピーに置き換えて `~/.claude` の Git 管理下に入れ、以後は `~/.claude` 側が正本。本リポジトリ側は提出物スナップショットとして凍結する（編集しない）
 - **クライアント事実（`references/clients/`）の追記・更新は、昇格後は必ず `~/.claude` 側だけに行う**。事実が2箇所で食い違うと、古い決裁構造を前提にした提案文が生成される
